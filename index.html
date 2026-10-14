@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#073b27">
+  <meta name="theme-color" content="#123D2C">
   <meta name="description" content="Find your perfect residential plot at Serene Light, a thoughtfully planned community in Thirumudivakkam, Chennai.">
   <title>Serene Light | Your own land. Your beautiful beginning.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,50 +14,61 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Serene Light home">
-        <img class="jvp-logo" src="images/jvp-logo.svg" alt="Serene Light logo">
-        <img class="brand-logo" src="images/serene-logo.png" alt="Serene Light logo">
-        <!-- <span class="brand-name">SERENE LIGHT<small>Your own land. Your beautiful beginning.</small></span> -->
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
-        <a href="#about-serene-light">Overview</a>
-        <a href="#plot-plan">Plot Plan</a>
-        <a href="#specifications">Specifications</a>
-        <a href="#advantages">Advantages</a>
-        <a href="#location">Location</a>
-        <!-- <a href="#why-serene-light">Why Serene Light</a> -->
-      </nav>
-      <a class="button button-dark header-cta" href="#enquiry">Enquire now <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
   <main id="main-content">
     <section class="hero" id="home">
       <div class="hero-image" role="img" aria-label="Aerial view over green residential plots"></div>
       <div class="hero-shade"></div>
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <!-- <p class="eyebrow eyebrow-light">A little closer to nature. A lot closer to you.</p> -->
-          <!-- <h1>Serene Light</h1> -->
-          <p class="hero-lead">Serene by Life.<br><em>Bright by Growth.</em></p>
-          <p class="hero-description">An exclusive boutique plotted community in Thirumudivakkam.<br>Thoughtfully planned villa plots for a serene, connected future.</p>
-          <!-- <p class="location-tag"><span aria-hidden="true">⌖</span> Thirumudivakkam, Chennai</p> -->
-          <div class="hero-actions">
-            <a class="button button-gold" href="#plot-plan">Book a site visit <span aria-hidden="true">↗</span></a>
-            <a class="text-link light-link" href="#enquiry">Request brochure <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="hero-trust">
-            <span>⌖ &nbsp;CMDA &amp; RERA Registered Villa Plots</span>
-            <span>RERA Number: To be updated</span>
+      <svg class="hero-filter-defs" aria-hidden="true" focusable="false">
+        <filter id="hero-water-ripple" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="hero-water-turbulence" type="fractalNoise" baseFrequency="0.015 0.1" numOctaves="3" seed="2" result="water-noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="water-noise" scale="20" xChannelSelector="G" yChannelSelector="B"></feDisplacementMap>
+        </filter>
+      </svg>
+      <div class="hero-center">
+        <a class="hero-brand" href="#about-serene-light" aria-label="Serene Light">
+          <img src="images/serene-logo.png" alt="Serene Light">
+        </a>
+        <p class="hero-tagline">Serene by Life. Bright by Growth.</p>
+        <h1 class="hero-descriptor">Premium Residential Plots <span aria-hidden="true">·</span> Thirumudivakkam</h1>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#plot-plan">Explore Available Plots <span aria-hidden="true">↗</span></a>
+          <a class="button button-hero-outline" href="#enquiry">Enquire Now <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#site-navigation" aria-label="Scroll to navigation"><span></span></a>
+    </section>
+
+    <div class="site-header" id="site-navigation">
+      <div class="container header-inner">
+        <a class="nav-brand" href="#home" aria-label="Serene Light home">
+          <img class="nav-jvp-logo" src="images/jvp-logo.svg" alt="JVP Housing">
+          <img class="nav-serene-logo" src="images/serene-logo.png" alt="Serene Light">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="#about-serene-light">Overview</a>
+          <a href="#plot-plan">Plot Plan</a>
+          <a href="#specifications">Specifications</a>
+          <a href="#advantages">Advantages</a>
+          <a href="#location">Location</a>
+        </nav>
+        <a class="button button-dark header-cta" href="#enquiry">Enquire now <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <section class="section overview-section adv-bg" id="about-serene-light">
+      <div class="container overview-layout">
+        <div class="overview-content">
+          <div class="section-copy">
+            <p class="eyebrow">About Serene Light</p>
+            <h2>An Exclusive Enclave.<br><em>A Timeless Address.</em></h2>
+            <p>JVP Serene Light is an exclusive boutique plotted community designed for families seeking peaceful residential living without sacrificing urban connectivity.</p>
+            <p>Spanning over 34,980 sq.ft, this layout offers 28 thoughtfully demarcated villa plots engineered for immediate custom construction.</p>
           </div>
         </div>
         <aside class="enquiry-card" id="enquiry">
-          <!-- <p class="eyebrow eyebrow-gold">Your next chapter starts here</p> -->
           <h2>Find your perfect plot.</h2>
           <p class="form-intro">Let's make it happen.</p>
           <form class="enquiry-form">
@@ -68,36 +79,18 @@
             <label for="phone">Phone</label>
             <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" autocomplete="tel" inputmode="tel" pattern="[0-9+\(\) \-]{7,18}" required>
             <button class="button button-gold form-submit" type="submit">Enquire now <span aria-hidden="true">↗</span></button>
-            <!-- <p class="form-note">♧ &nbsp;Your details are safe with us.</p> -->
             <p class="form-message" aria-live="polite" role="status"></p>
           </form>
         </aside>
       </div>
-      <a class="scroll-cue" href="#highlights" aria-label="Scroll to project highlights"><span></span></a>
     </section>
 
     <section class="highlights" id="highlights" aria-label="Project highlights">
       <div class="container highlights-grid">
         <div><span class="highlight-icon">▢</span><small>Plots Range</small><strong>819-1320 Sq.Ft.</strong></div>
         <div><span class="highlight-icon">⌂</span><small>Project Type</small><strong>28 Premium Villa Plots</strong></div>
-        <div><span class="highlight-icon">💧</span><small>Water</small><strong>Abundant Groundwater</strong></div>
+        <div><span class="highlight-icon"><svg class="water-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5C9.3 6.4 5.5 10.6 5.5 14.6a6.5 6.5 0 1 0 13 0C18.5 10.6 14.7 6.4 12 2.5Zm0 16.2a4.1 4.1 0 0 1-4.1-4.1h1.8a2.3 2.3 0 0 0 2.3 2.3v1.8Z"/></svg></span><small>Water</small><strong>Abundant Groundwater</strong></div>
         <div><span class="highlight-icon">✦</span><small>Orientation</small><strong>100% Vastu Compliant</strong></div>
-      </div>
-    </section>
-
-    <section class="section overview-section" id="about-serene-light">
-      <div class="container split-layout">
-        <div class="image-feature">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=85" alt="Contemporary home surrounded by palms and greenery" loading="lazy">
-          <div class="image-caption"><span>♧</span><strong>A space to call your own.</strong><small>Thoughtfully planned. Naturally yours.</small></div>
-        </div>
-        <div class="section-copy">
-          <p class="eyebrow">About Serene Light</p>
-          <h2>An Exclusive Enclave.<br><em>A Timeless Address.</em></h2>
-          <p>JVP Serene Light is an exclusive boutique plotted community designed for families seeking peaceful residential living without sacrificing urban connectivity.</p>
-          <p>Spanning over 34,980 sq.ft, this layout offers 28 thoughtfully demarcated villa plots engineered for immediate custom construction.</p>
-          <a class="button button-dark" href="#enquiry">Discover the project <span aria-hidden="true">↗</span></a>
-        </div>
       </div>
     </section>
 
@@ -105,34 +98,15 @@
       <div class="container">
         <div class="section-heading heading-with-link">
           <div><p class="eyebrow">Plot Plan</p><h2>Find your corner of <em>possibility.</em></h2></div>
-          <a class="button button-outline" href="#enquiry">Request approved layout <span aria-hidden="true">↗</span></a>
+          <a class="button button-gold" href="#enquiry">Check availability <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="plot-layout">
-          <div class="plot-map" aria-label="Illustrative residential plot layout">
-            <p class="map-north">N ↑</p>
-            <div class="plot-blocks">
-              <div class="plot-block"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span></div>
-              <div class="plot-block"><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span></div>
-              <div class="plot-road">INTERNAL ROAD</div>
-              <div class="plot-block"><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span></div>
-              <div class="plot-block"><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span></div>
-              <div class="plot-road">INTERNAL ROAD</div>
-              <div class="plot-block"><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span></div>
-              <div class="plot-block"><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span class="plot-available">GREEN<br>SPACE</span></div>
-            </div>
-            <div class="map-legend"><span><i></i> Residential plots</span><span><i class="legend-green"></i> Green space</span></div>
-          </div>
-          <div class="plot-copy">
-            <h3>Every great home<br>starts with the right plot.</h3>
-            <p>Explore plots designed with the future in mind. Thoughtful dimensions, considered road access, and a little more room to breathe.</p>
-            <dl class="plot-details">
-              <div><dt>Plot dimensions</dt><dd>Request the site plan</dd></div>
-              <div><dt>Facing &amp; frontage</dt><dd>Explore available plots</dd></div>
-              <div><dt>Project availability</dt><dd>Get the latest details</dd></div>
-            </dl>
-            <p class="fine-print">Layout shown for illustrative purposes. Please contact our team for current plot availability and specifications.</p>
-            <a class="button button-dark" href="#enquiry">Check plot availability <span aria-hidden="true">↗</span></a>
-          </div>
+        <div class="plot-plan-content">
+          <button class="plot-plan-image-trigger" type="button" aria-label="View the illustrative plot layout full screen">
+            <img class="plot-plan-image" src="images/plot.png" alt="Illustrative plot layout for Serene Light" loading="lazy">
+            <span class="plot-zoom-hint">View full layout</span>
+          </button>
+          <p class="fine-print">Layout shown for illustrative purposes. Please contact our team for current plot availability and specifications.</p>
+          <a class="button button-outline plot-download" href="images/plot.png" download="serene-light-illustrative-layout.png">Download layout image <span aria-hidden="true">↓</span></a>
         </div>
       </div>
     </section>
@@ -141,7 +115,7 @@
       <div class="container">
         <div class="section-heading heading-with-link">
           <div><p class="eyebrow">Specifications</p><h2>Master project <em>specifications.</em></h2></div>
-          <a class="button button-outline" href="#enquiry">Full specifications <span aria-hidden="true">↗</span></a>
+          <a class="button button-dark header-cta" href="#enquiry">Full specifications <span aria-hidden="true">↗</span></a>
         </div>
         <div class="spec-grid">
           <article class="spec-card"><span class="spec-icon">▢</span><h3>Total Layout Area</h3><p>3,250 Sq.M (34,982 Sq.Ft)</p></article>
@@ -150,6 +124,23 @@
           <article class="spec-card"><span class="spec-icon">✦</span><h3>Total Exclusive Plots</h3><p>28 villa units with individual demarcation</p></article>
         </div>
         <p class="fine-print">Revenue jurisdiction: S.No: 276/3 &amp; 276/9, Thirumudivakkam Village, Kundrathur Taluk, Kancheepuram District.</p>
+        <!-- <div class="trust-note">
+          <div class="trust-heading">
+            <p class="eyebrow">Buyer due diligence</p>
+            <h3>Review the records before you buy.</h3>
+            <p>Approval identifiers and developer credentials are placeholders until verified details and documents are provided.</p>
+          </div>
+          <div class="trust-grid">
+            <article><h4>CMDA approval</h4><p>Reference: <strong>Details to be updated</strong></p><a href="https://www.cmdachennai.gov.in/" target="_blank" rel="noopener noreferrer">Visit CMDA website <span aria-hidden="true">↗</span></a></article>
+            <article><h4>Tamil Nadu RERA</h4><p>Registration number: <strong>Details to be updated</strong></p><a href="https://rera.tn.gov.in/" target="_blank" rel="noopener noreferrer">Visit TNRERA website <span aria-hidden="true">↗</span></a></article>
+            <article><h4>Title &amp; documents</h4><p>Request the parent deed, encumbrance certificate, patta, survey records, and approval copies. Have an independent property lawyer review them and verify records with the relevant authorities before purchase.</p></article>
+            <article><h4>Developer credentials</h4><p>Company profile and completed-project references: <strong>Details to be updated</strong></p></article>
+          </div>
+          <div class="trust-actions">
+            <a class="button button-outline" href="#enquiry">Request brochure &amp; approved layout <span aria-hidden="true">↗</span></a>
+            <span class="fine-print">The layout image above is illustrative, not an approved plan.</span>
+          </div>
+        </div> -->
       </div>
     </section>
 
@@ -169,9 +160,10 @@
       <div class="container">
         <div class="section-heading heading-with-link">
           <div><p class="eyebrow">A glimpse of Serene Light</p><h2>Picture your <em>new beginning.</em></h2></div>
-          <a class="button button-outline" href="#enquiry">Experience it in person <span aria-hidden="true">↗</span></a>
+          <a class="button button-gold" href="#enquiry">Experience it in person <span aria-hidden="true">↗</span></a>
         </div>
         <div class="gallery-carousel" aria-label="Serene Light gallery carousel">
+          <p class="fine-print gallery-disclaimer">Visuals are artistic impressions, not actual photographs of the project site.</p>
           <div class="gallery-track">
             <figure class="gallery-slide"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=85" alt="Green landscape and open land in the evening light" loading="lazy"><figcaption>A greener perspective <span>↗</span></figcaption></figure>
             <figure class="gallery-slide"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Welcoming contemporary home with a landscaped garden" loading="lazy"><figcaption>A welcoming arrival <span>↗</span></figcaption></figure>
@@ -190,14 +182,14 @@
             <button class="gallery-arrow" type="button" data-direction="next" aria-label="Next images">→</button>
           </div>
         </div>
-        <p class="fine-print">Visuals are artistic impressions, not actual photographs of the project site.</p>
       </div>
     </section>
 
-    <section class="section section-sage location-section" id="location">
+    <section class="section section-sage location-section location-bg" id="location">
       <div class="container location-layout">
-        <div class="section-copy"><p class="eyebrow">Location</p><h2>Seamlessly connected<br><em>to Chennai’s arterial corridors.</em></h2><p>Pillayar Kovil Street, Vazhuthalambedu, Thirumudivakkam, Kundrathur, Chennai – 600132.</p><p>Just minutes from the Outer Ring Road, Kundrathur Main Road, and the city’s major commercial and residential hubs, Serene Light brings you closer to life without losing the sense of calm.</p><a class="button button-dark" href="#enquiry">Get directions &amp; site visit <span aria-hidden="true">↗</span></a></div>
-        <a class="map-card" href="https://maps.google.com/?q=Pillayar+Kovil+Street%2C+Vazhuthalambedu%2C+Thirumudivakkam%2C+Chennai" target="_blank" rel="noopener noreferrer" aria-label="Open Serene Light in Google Maps">
+        <div class="section-copy"><p class="eyebrow">Location</p><h2>Seamlessly connected<br><em>to Chennai’s arterial corridors.</em></h2><p>Just minutes from the Outer Ring Road, Kundrathur Main Road, and the city’s major commercial and residential hubs, Serene Light brings you closer to life without losing the sense of calm.</p><a class="button button-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pillayar+Kovil+Street%2C+Vazhuthalambedu%2C+Thirumudivakkam%2C+Chennai" target="_blank" rel="noopener noreferrer">Get directions &amp; site visit <span aria-hidden="true">↗</span></a></div>
+        <a class="map-card location-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pillayar+Kovil+Street%2C+Vazhuthalambedu%2C+Thirumudivakkam%2C+Chennai" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Serene Light in Google Maps">
+          <img class="location-map-image" src="images/location-map.png" alt="Location map showing Serene Light’s road connections across Chennai" loading="lazy">
           <span class="map-road map-road-one"></span><span class="map-road map-road-two"></span><span class="map-road map-road-three"></span><span class="map-water"></span><span class="map-label">CHENNAI</span><span class="map-pin">⌖</span><span class="map-project">Serene Light · Thirumudivakkam</span><small>Illustrative location map · not to scale</small>
         </a>
       </div>
@@ -205,21 +197,19 @@
 
     <section class="section faq-section" id="why-serene-light">
       <div class="container faq-container">
-        <div class="section-heading centered"><p class="eyebrow">Why Serene Light</p><h2>Your blueprint for a<br><em>prosperous tomorrow.</em></h2></div>
+        <div class="section-heading centered"><p class="eyebrow">FAQ</p><h2>Frequently asked <em>questions.</em></h2></div>
         <div class="faq-list">
-          <details open><summary>Strategic high-demand micro-location<span aria-hidden="true">+</span></summary><p>Nestled inside peaceful residential Vazhuthalambedu while only 3 minutes from SIDCO and major arterial bypasses.</p></details>
-          <details><summary>Clear title &amp; patta ready<span aria-hidden="true">+</span></summary><p>Zero encumbrances, meticulously surveyed plots (S.No: 276/3 &amp; 276/9), and clear legal paperwork.</p></details>
-          <details><summary>Optimal villa sizes<span aria-hidden="true">+</span></summary><p>Tailored units from 819 sq.ft up to 1,320 sq.ft — ideal for independent duplex villas or rental income homes.</p></details>
-          <details><summary>Superior water &amp; environment<span aria-hidden="true">+</span></summary><p>Pure, sweet potable water table set within serene, pollution-free surroundings.</p></details>
-          <details><summary>JVP Housing assurance<span aria-hidden="true">+</span></summary><p>Built on trust, transparent pricing, and continuous customer support from site visit to registration.</p></details>
+          <details open><summary>1. What is Serene Light?<span aria-hidden="true">+</span></summary><p>Serene Light is a thoughtfully planned residential plotted development designed for families and individuals looking to invest in land and build their dream homes.</p></details>
+          <details><summary>2. Where is Serene Light located?<span aria-hidden="true">+</span></summary><p>Serene Light is located in Thirumudivakkam, Chennai. Contact our team for the exact site location and directions.</p></details>
+          <details><summary>3. What plot sizes are available?<span aria-hidden="true">+</span></summary><p>Serene Light offers a range of residential plot sizes to suit different needs. Contact our sales team for current availability and plot details.</p></details>
+          <details><summary>4. What approvals and documents are available?<span aria-hidden="true">+</span></summary><p>Our team can provide the applicable project approvals and property documents for your review before purchase.</p></details>
+          <details><summary>5. Can I visit the project site before purchasing?<span aria-hidden="true">+</span></summary><p>Yes, you can contact our sales team to schedule a site visit and explore the layout, location, and available plots.</p></details>
+          <details><summary>6. How can I enquire about pricing and booking?<span aria-hidden="true">+</span></summary><p>You can submit the enquiry form on our website or contact our sales team for the latest pricing, availability, payment terms, and booking process.</p></details>
         </div>
         <a class="button button-outline" href="#enquiry">Have another question? <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <section class="closing-cta">
-      <div class="container closing-inner"><h2>Let’s put down roots, together.</h2><p>Your beautiful beginning at Serene Light is just a conversation away.</p><a class="button button-gold" href="#enquiry">Start your journey <span aria-hidden="true">↗</span></a></div>
-    </section>
   </main>
 
   <dialog class="enquiry-modal" aria-labelledby="modal-title">
@@ -230,6 +220,16 @@
       <button class="modal-close" type="button" aria-label="Close enquiry form">×</button>
     </div>
     <div class="modal-form-container"></div>
+  </dialog>
+
+  <dialog class="image-viewer" id="plot-viewer" aria-label="Full-screen illustrative plot layout">
+    <button class="viewer-close" type="button" aria-label="Close full-screen layout">×</button>
+    <img src="images/plot.png" alt="Illustrative plot layout for Serene Light">
+  </dialog>
+  <dialog class="image-viewer" id="gallery-viewer" aria-labelledby="gallery-viewer-caption">
+    <button class="viewer-close" type="button" aria-label="Close gallery image">×</button>
+    <img src="" alt="">
+    <p id="gallery-viewer-caption"></p>
   </dialog>
 
   <footer class="site-footer">
@@ -245,6 +245,7 @@
         <div class="footer-details">
           <p><strong>Location</strong><span>Pillayar Kovil Street, Vazhuthalambedu, Thirumudivakkam, Kundrathur, Chennai – 600132</span></p>
           <p><strong>Head Office</strong><span>Prasad Manor, New No. 18, Old No. 32, 1st Floor, 1st Cross Street, Puliyur Main Road, Trustpuram, Kodambakkam, Chennai.</span></p>
+          <!-- <p><strong>Project enquiries</strong><a class="footer-contact-link" href="#enquiry">Request a callback or project details <span aria-hidden="true">↗</span></a></p> -->
         </div>
       </div>
     </div>

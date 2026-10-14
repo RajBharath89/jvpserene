@@ -5,7 +5,7 @@ const mainNav = document.querySelector(".main-nav");
 const enquiryModal = document.querySelector(".enquiry-modal");
 const modalFormContainer = document.querySelector(".modal-form-container");
 const modalClose = document.querySelector(".modal-close");
-const enquiryCard = document.querySelector(".hero .enquiry-card");
+const enquiryCard = document.querySelector(".overview-section .enquiry-card");
 
 if (enquiryModal && modalFormContainer && enquiryCard) {
   const modalCard = enquiryCard.cloneNode(true);
@@ -24,7 +24,7 @@ if (enquiryModal && modalFormContainer && enquiryCard) {
   });
   modalFormContainer.append(modalCard);
 
-  document.querySelectorAll('a[href="#enquiry"]').forEach((link) => {
+  document.querySelectorAll("a.button, a.footer-contact-link, a[href=\"#enquiry\"]").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       if (!enquiryModal.open) enquiryModal.showModal();
@@ -85,13 +85,32 @@ if (year) year.textContent = String(new Date().getFullYear());
 const header = document.querySelector(".site-header");
 if (header) {
   const updateHeaderState = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 20);
+    header.classList.toggle("is-scrolled", header.getBoundingClientRect().top <= 0);
   };
 
   window.addEventListener("scroll", updateHeaderState, { passive: true });
   updateHeaderState();
 }
 
+const turbulence = document.querySelector("#hero-water-turbulence");
+if (turbulence && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const cycleDuration = 40000;
+  let animationStart = null;
+
+  const animateTurbulence = (timestamp) => {
+    if (animationStart === null) animationStart = timestamp;
+
+    const cycleProgress = ((timestamp - animationStart) % cycleDuration) / cycleDuration;
+    const progress = (1 - Math.cos(cycleProgress * Math.PI * 2)) / 2;
+    const frequencyX = 0.015 + progress * 0.005;
+    const frequencyY = 0.1 + progress * 0.05;
+    turbulence.setAttribute("baseFrequency", `${frequencyX} ${frequencyY}`);
+
+    window.requestAnimationFrame(animateTurbulence);
+  };
+
+  window.requestAnimationFrame(animateTurbulence);
+}
 const navLinks = document.querySelectorAll(".main-nav a");
 const sections = [...document.querySelectorAll("main section[id]")];
 
@@ -161,3 +180,50 @@ faqItems.forEach((item) => {
     });
   });
 });
+
+const plotViewer = document.querySelector("#plot-viewer");
+const plotImageTrigger = document.querySelector(".plot-plan-image-trigger");
+if (plotViewer instanceof HTMLDialogElement && plotImageTrigger) {
+  plotImageTrigger.addEventListener("click", () => plotViewer.showModal());
+  plotViewer.querySelector(".viewer-close")?.addEventListener("click", () => plotViewer.close());
+  plotViewer.addEventListener("click", (event) => {
+    if (event.target === plotViewer) plotViewer.close();
+  });
+}
+
+const galleryViewer = document.querySelector("#gallery-viewer");
+const galleryViewerImage = galleryViewer?.querySelector("img");
+const galleryViewerCaption = galleryViewer?.querySelector("#gallery-viewer-caption");
+if (
+  galleryViewer instanceof HTMLDialogElement &&
+  galleryViewerImage instanceof HTMLImageElement &&
+  galleryViewerCaption
+) {
+  const openGalleryImage = (image) => {
+    galleryViewerImage.src = image.currentSrc || image.src;
+    galleryViewerImage.alt = image.alt;
+    galleryViewerCaption.textContent = image.closest(".gallery-slide")?.querySelector("figcaption")?.textContent.trim() || image.alt;
+    galleryViewer.showModal();
+  };
+
+  document.querySelectorAll(".gallery-slide img").forEach((image) => {
+    image.setAttribute("role", "button");
+    image.tabIndex = 0;
+    image.setAttribute("aria-label", `View full-size image: ${image.alt}`);
+    image.addEventListener("click", () => openGalleryImage(image));
+    image.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openGalleryImage(image);
+      }
+    });
+  });
+
+  galleryViewer.querySelector(".viewer-close")?.addEventListener("click", () => galleryViewer.close());
+  galleryViewer.addEventListener("click", (event) => {
+    if (event.target === galleryViewer) galleryViewer.close();
+  });
+  galleryViewer.addEventListener("close", () => {
+    galleryViewerImage.removeAttribute("src");
+  });
+}
